@@ -1,16 +1,17 @@
-import React from "react";
-
+import React, { useState } from "react";
+import ColoerFulMessage from "./components/ColorFulMesseage";
 const App = () => {
-  const onClickButton = () => alert();
-  const contentStyle = {
-    color: "blue",
-    fontSize: "18px"
+  const onClickCountUp = () => {
+    setNum(num + 1);
   };
+  const [num, setNum] = useState(0);
   return (
     <>
       <h1 style={{ color: "red" }}>こんにちは</h1>
-      <p style={contentStyle}>お元気ですか？</p>
-      <button onClick={onClickButton}>ボタン</button>
+      <ColoerFulMessage color="blue" message="お元気ですか？" />
+      <ColoerFulMessage color="pink" message="元気です" />
+      <button onClick={onClickCountUp}>カウントアップ</button>
+      <p>{num}</p>
     </>
   );
 };
